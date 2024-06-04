@@ -15,7 +15,9 @@ public class zaicsMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("zaicsmod");
 
-	public static final Item TEA_BAG = new Item(new Item.Settings());
+	public static final Item TEA_BAG =
+			Registry.register(Registries.ITEM, new Identifier("zaicsmod", "tea_bag"),
+					new Item(new Item.Settings()));
 
 	@Override
 	public void onInitialize() {
