@@ -2,6 +2,7 @@ package com.zaicoba;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -17,7 +18,7 @@ public class zaicsMod implements ModInitializer {
 
 	public static final Item TEA_BAG =
 			Registry.register(Registries.ITEM, new Identifier("zaicsmod", "tea_bag"),
-					new Item(new Item.Settings()));
+					new Item(new Item.Settings().maxCount(48)));
 
 	public class TeaBag extends Item{
 		public TeaBag(Settings settings) {
@@ -29,5 +30,8 @@ public class zaicsMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
+		FuelRegistry.INSTANCE.add(TEA_BAG, 900);
 	}
+
+
 }
