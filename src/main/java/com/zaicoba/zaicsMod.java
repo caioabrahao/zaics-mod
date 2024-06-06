@@ -19,10 +19,15 @@ public class zaicsMod implements ModInitializer {
 			Registry.register(Registries.ITEM, new Identifier("zaicsmod", "tea_bag"),
 					new Item(new Item.Settings()));
 
+	public class TeaBag extends Item{
+		public TeaBag(Settings settings) {
+			super(settings);
+		}
+
+	}
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
-
-		Registry.register(Registries.ITEM, new Identifier("zaicsmod", "tea_bag"), TEA_BAG);
 	}
 }
